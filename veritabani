@@ -1,0 +1,25 @@
+-- 1. Veritabanını oluştur
+CREATE DATABASE oyun1;
+GO
+
+-- 2. Kullanılacak veritabanına geç
+USE oyun1;
+GO
+
+-- 3. 'kullanicilar' tablosunu oluştur
+CREATE TABLE kullanicilar (
+    kullaniciAdi NVARCHAR(50) PRIMARY KEY,  -- Kullanıcı adı benzersizdir
+    puan INT NOT NULL DEFAULT 0,            -- Başlangıç puanı
+    seviye INT NOT NULL DEFAULT 1           -- Başlangıç seviyesi
+);
+
+-- 4. 'sorular' tablosunu oluştur
+CREATE TABLE sorular (
+    id INT IDENTITY(1,1) PRIMARY KEY,        -- Otomatik artan ID
+    soru NVARCHAR(255) NOT NULL,             -- Soru metni
+    scvp1 NVARCHAR(100) NOT NULL,            -- Şık 1
+    scvp2 NVARCHAR(100) NOT NULL,            -- Şık 2
+    scvp3 NVARCHAR(100) NOT NULL,            -- Şık 3
+    scvp4 NVARCHAR(100) NOT NULL,            -- Şık 4
+    cevap INT NOT NULL                       -- Doğru cevabın şık numarası (1-4)
+);
