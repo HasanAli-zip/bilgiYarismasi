@@ -6,9 +6,9 @@ def veritabaninaBaglan():
         # SQL Server'a bağlanmak için gerekli bağlantı bilgileri
         conn = pyodbc.connect(
             'DRIVER={SQL Server};'
-            'SERVER=EXCALIBUR\\SQLEXPRESS;'  # SQL Server adını belirt
-            'DATABASE=oyun1;'  # Kullanılacak veritabanı adı
-            'Trusted_Connection=yes;'  # Windows kimliği ile bağlan
+            'SERVER=Server Adınız;'  # SQL Server adını belirt
+            'DATABASE=oyun1;'  # Kullanılacak veritabanı adı (verdiğim sorguda kullanılan veritabanı adı oyun1)
+            'Trusted_Connection=yes;'  # Windows kimliği ile bağlanmak isterseniz
         )
         cursor = conn.cursor()  # SQL komutlarını çalıştırmak için cursor oluşturuluyor
         return conn, cursor  # Bağlantı ve cursor geri döndürülüyor
